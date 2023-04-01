@@ -1,13 +1,16 @@
 package mq.java.classes;
 
+import mq.java.methods.RobotX;
+
 public class TestC 
 {
 
 	public static void main(String[] args) 
 	{
-		System.out.println(100+200); 
-		System.out.println("WelCome to Mindq");
-
+		System.out.println("Welcome to Mindq");
+		new RobotX().Turnon();
+		
+		
 	}
 
 }

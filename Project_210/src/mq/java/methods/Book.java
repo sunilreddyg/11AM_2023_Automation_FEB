@@ -17,6 +17,7 @@ public class Book
 	{
 		System.out.println("methods");
 	}
+	
 	public void details()
 	{
 		author();
