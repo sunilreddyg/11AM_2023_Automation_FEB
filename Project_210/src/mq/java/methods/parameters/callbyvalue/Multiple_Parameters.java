@@ -15,8 +15,6 @@ public class Multiple_Parameters
 		System.out.println(PWD);
 	}
 	
-	
-	
 	//Method with Multiple parameters [With Different Datatype]
 	public void method3(String Mobile, int quantity)
 	{
