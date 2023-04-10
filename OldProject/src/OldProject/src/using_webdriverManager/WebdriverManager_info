@@ -1,0 +1,18 @@
+WebDriverManager is an open-source Java library that 
+carries out the management (i.e., download, setup, 
+and maintenance) of the drivers required by 
+Selenium WebDriver 
+
+Browser Drivers Can manage
+ chromedriver
+ geckodriver
+ msedgedriver
+ safaridriver
+ IEDriverServer
+ 
+ Where to download WebDriver Manager Jars:-->
+ 
+ 	=> https://jar-download.com/artifact-search/webdrivermanager
+ 	=> Click on download WebdriverManagerJars V.5.3.2
+ 	=> IT is a zip format file. Unzip file to backup folder
+ 	=> Add all jar files to project..
