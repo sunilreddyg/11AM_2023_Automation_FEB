@@ -6,26 +6,29 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class ScrollToView_Object {
+public class HighlightObject 
+{
 
 	public static void main(String[] args) throws Exception 
 	{
 		
 		WebDriver driver=new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://www.naukri.com");
+		driver.get("https://www.facebook.com");
 		Thread.sleep(5000);
 		
 		//Enable Javascript executor at automation browser
 		JavascriptExecutor js=((JavascriptExecutor)driver);
 
+
+		WebElement Element=driver.findElement(By.linkText("Forgotten password?"));
+		js.executeScript("arguments[0].style.backgroundColor='yellow'", Element);
 		
-		WebElement View=driver.findElement(By.xpath("(//a[@class='view-all-comp'])[1]"));
-		js.executeScript("arguments[0].scrollIntoView(true)", View);
 		
+		//Set outline to Object
+		js.executeScript("arguments[0].style.outline ='5px dotted green'", Element);
+
 		
-		//Only Selenium 4 version have this feature
-		//new Actions(driver).scrollToElement(View).perform();
 	}
 
 }

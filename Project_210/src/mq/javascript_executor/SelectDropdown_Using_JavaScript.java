@@ -26,7 +26,7 @@ public class SelectDropdown_Using_JavaScript {
 		//Selecting Option from dropdown using Index Property
 		Thread.sleep(3000);
 		WebElement MonthDropdown=driver.findElement(By.xpath("//select[@name='birthday_month']"));
-		js.executeScript("arguments[0].value='Dec'", MonthDropdown);
+		js.executeScript("arguments[0].selectedIndex='3'", MonthDropdown);
 		
 		
 		//Selecting Option from dropdown using Value property
