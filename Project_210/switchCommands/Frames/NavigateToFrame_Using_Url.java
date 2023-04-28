@@ -19,7 +19,8 @@ public class NavigateToFrame_Using_Url {
 	    //Click Location
 	    driver.findElement(By.xpath("(//div[contains(@class,'sbgID')])[1]")).click();
 	    
-
+	    //navigate back to main page
+	    driver.navigate().back();
 	}
 
 }
