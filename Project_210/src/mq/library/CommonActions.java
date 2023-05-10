@@ -13,6 +13,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.Select;
@@ -30,6 +32,29 @@ public class CommonActions
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		mainwindowid=driver.getWindowHandle();
+	}
+	
+	
+	//Launch any browser [chrome,firefox,ie]
+	//Parameter ---> Local
+	public void LaunchBrowser(String browsername)
+	{
+		if(browsername.equals("chrome"))
+		{
+			driver=new ChromeDriver();
+		}
+		else if(browsername.equals("firefox"))
+		{
+			driver=new FirefoxDriver();
+		}
+		else if(browsername.equals("ie"))
+		{
+			driver=new InternetExplorerDriver();
+		}
+		else
+		{
+			System.out.println("browsername mismatched");
+		}
 	}
 	
 	public void LoadPage(String url)
@@ -191,6 +216,66 @@ public class CommonActions
 		driver.switchTo().frame(driver.findElement(By.xpath(FrameXpath)));
 	}
 	
+	
+	//Verify Title presented
+	public boolean  VerifyPageTitle(String ExpTitle)
+	{
+		return driver.getTitle().equals(ExpTitle);
+	}
+	
+	//Verify Url Presented
+	public boolean verifyPageurl(String Expurl)
+	{
+		return driver.getCurrentUrl().contains(Expurl);
+	}
+	
+	//Verify ElementPresentedAtSource
+	public boolean VerifyElementAtSource(String ElementID)
+	{
+		return driver.getPageSource().contains(ElementID);
+	}
+	
+	
+	//Verify ElementPresentedAtSource
+	public WebElement CheckElementPresentedAtSource(String xpath)
+	{
+		try {
+			return driver.findElement(By.xpath(xpath));
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	//Check Text Presented at webpage
+	public boolean VerifyTextAtWebpage(String ExpText)
+	{
+		String PageText=driver.findElement(By.tagName("body")).getText();
+		return PageText.contains(ExpText);
+	}
+	
+	//Check Text Presented at location
+	public boolean VerifyTextAtLocation(String Xpath,String ExpText)
+	{
+		boolean flag=false;
+		if(CheckElementPresentedAtSource(Xpath)!=null)
+		{
+			String PageText=driver.findElement(By.xpath(Xpath)).getText();
+			 flag=PageText.contains(ExpText);
+		}
+		return flag;
+	}
+	
+	//Read Text Presented at location
+	public String ReadtextAtLocation(String Xpath)
+	{
+		String Pagetext=null;
+		if(CheckElementPresentedAtSource(Xpath)!=null)
+		{
+			Pagetext=driver.findElement(By.xpath(Xpath)).getText();
+		}
+		return Pagetext;
+	}
 	
 	
 	

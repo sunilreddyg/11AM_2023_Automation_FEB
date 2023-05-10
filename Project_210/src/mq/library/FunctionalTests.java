@@ -20,11 +20,7 @@ public class FunctionalTests
 			action.typetext("//input[@type='password']", "admin123");
 			action.ClickElemnet("//button[@type='submit']");
 			action.sleep(5000);
-			
 		
-			
-			
-			
 	}
 
 }
