@@ -26,7 +26,7 @@ public class Verify_Dropdown_Option_Presented {
 		try {
 			//Identify City Dropdown location
 			WebElement CityDropdown=driver.findElement(By.xpath("//select[@id='customCity']"));
-			new Select(CityDropdown).selectByVisibleText("Agora");
+			new Select(CityDropdown).selectByVisibleText("Kadi");
 			//Incase option not presented it throws NoSuchElementException
 			flag=true;
 		} catch (Exception e) {

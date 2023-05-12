@@ -89,7 +89,8 @@ getText:-->
 	Syntax:--->
 				  WebElement Element=driver.findElement(By.id("x"));
 				  String Element_text=Element.getText();
-				  System.out.println(Element_text);	  
+				  System.out.println(Element_text);	
+				    
 			Note1:--> if selected element not contains any text, method
 				      return empty status.  
 			Note2:--> Method capture selected element and it's child
