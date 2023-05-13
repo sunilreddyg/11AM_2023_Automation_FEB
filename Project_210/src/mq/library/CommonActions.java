@@ -17,7 +17,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.io.FileHandler;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CommonActions 
 {
@@ -25,6 +27,7 @@ public class CommonActions
 	String screenpath="D:\\24_Mar_2023_11Am\\Project_210\\Screens\\";
 	String url="https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
 	String mainwindowid;
+	WebDriverWait wait;
 	public CommonActions()
 	{
 		driver=new ChromeDriver();
@@ -32,6 +35,7 @@ public class CommonActions
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		mainwindowid=driver.getWindowHandle();
+		wait=new WebDriverWait(driver, Duration.ofSeconds(30));
 	}
 	
 	
@@ -76,11 +80,36 @@ public class CommonActions
 		}
 	}
 	
+	
+	
+	//Wait for VisibilityofObject
+	public WebElement Waitfor(String type,String xpath)
+	{
+		WebElement Element=null;
+		switch (type) {
+		case "visibile":
+			Element=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+			break;
+			
+		case "clickable":
+			Element=wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
+			break;
+
+		case "presence":
+			Element=wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
+			break;
+		default: System.out.println("Mismatch");
+			break;
+		}
+		
+		return Element;
+	}
+	
 	//Type text into Entryboxes
 	public void typetext(String xpath,String input)
 	{
 		try {
-			driver.findElement(By.xpath(xpath)).sendKeys(input);
+			Waitfor("visible", xpath).sendKeys(input);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
