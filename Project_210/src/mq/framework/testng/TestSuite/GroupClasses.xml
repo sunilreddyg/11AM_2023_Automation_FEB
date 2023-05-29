@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="GroudClass1">
+	<test name="Admin">
+		<classes>
+			<class name="framework.testng.TestSuite.Class1"></class>
+			<class name="framework.testng.Test_Priority"></class>
+			<class name="framework.testng.TestSuite.Class3"></class>
+		</classes>
+	</test>
+</suite>

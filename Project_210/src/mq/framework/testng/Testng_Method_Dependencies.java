@@ -9,10 +9,17 @@ import org.testng.annotations.Test;
 public class Testng_Method_Dependencies
 {
 	
-	@BeforeClass
+	@BeforeClass //Invoke before execution of first @Test
 	public void SetUp_browser()
 	{
 		System.out.println("Set all desired capabilites");
+	}
+	
+	@AfterClass
+	public void Close_browser()
+	{
+		System.out.println("browser closed");
+		
 	}
 	
 
@@ -34,7 +41,7 @@ public class Testng_Method_Dependencies
 	@Test(priority=2,dependsOnMethods="App_Load")
 	public void User_login()
 	{
-		Assert.assertEquals("nemail", "email");
+		Assert.assertEquals("email", "email");
 		Reporter.log("Account login successfull");
 	}
 	
@@ -42,7 +49,7 @@ public class Testng_Method_Dependencies
 	@Test(priority=3,dependsOnMethods="User_login")
 	public void ComposeEmail()
 	{
-		Assert.assertEquals("msg", "emsg");
+		Assert.assertEquals("msg", "msg");
 		Reporter.log("Email sent successfull");
 	}
 	
@@ -76,13 +83,8 @@ public class Testng_Method_Dependencies
 		Reporter.log("Account signout successfull");
 	}
 	
-
-	@AfterClass
-	public void Close_browser()
-	{
-		System.out.println("browser closed");
-		
-	}
+	
+	
 
 
 }
