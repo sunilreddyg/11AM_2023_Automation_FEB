@@ -38,7 +38,6 @@ public class ExcelCommonActions
 	public static boolean readbooleandata(int row, int col)
 	{
 		return targetcell(row, col).getBooleanCellValue();
-		
 	}
 	
 	
