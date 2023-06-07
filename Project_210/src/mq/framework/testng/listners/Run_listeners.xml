@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="d1">
+
+	<listeners>
+		<listener class-name="framework.testng.listners.Run_Listeners"/>
+		<listener class-name="framework.testng.listners.CreateReport"/>
+	</listeners>
+	
+	<test name="test1">
+		<classes>
+			<class name="framework.testng.listners.MyTest"></class>
+		</classes>
+	</test>
+</suite>
