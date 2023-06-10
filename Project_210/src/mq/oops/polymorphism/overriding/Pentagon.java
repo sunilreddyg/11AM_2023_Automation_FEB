@@ -17,7 +17,6 @@ public class Pentagon extends Shape
 		Pentagon obj=new Pentagon();
 		obj.draw();
 		
-
 	}
 
 }

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="default">
+	<test name="test">
+		<classes>
+			<class name="miniproject.Run_Testcases"/>
+		</classes>
+	</test>
+</suite>
