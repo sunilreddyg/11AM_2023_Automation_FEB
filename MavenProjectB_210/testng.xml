@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Default">
+	<test name="Test1">
+		<classes>
+			<class name="p1.ClassA"/>
+			<class name="p2.ClassB"/>
+			<!-- <class name="automation.Testng_WebDriver_TestCase"/> -->
+		</classes>
+	</test>
+</suite>
