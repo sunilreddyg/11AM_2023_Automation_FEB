@@ -6,7 +6,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="resource/features/userlogin.feature",glue="stepdefination",dryRun=false)
+@CucumberOptions(features="resource/features/webdrivertest.feature",glue="stepdefination",dryRun=false)
 public class TestRunner 
 {
 
