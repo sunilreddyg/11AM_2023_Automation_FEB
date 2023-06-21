@@ -26,7 +26,7 @@ Default_css:-->
 
 
 	htmlsource:-->
-		<input  id="email"  class="login"  type="text"> </input>
+		<input  id="email" name="fname" class="login"  type="text"> </input>
 
 	Using Default ID and class:-->
 
@@ -186,7 +186,7 @@ Example:-->  Target child node with parent Node.
 
 HtmlSource:-->
 
-	<div id="login_conainer"  class="demo">
+	<div id="login_container"  class="demo">
 		<input id="9ju7yg876"  type="text">  ---->Target Element
 	</div>	
 
@@ -194,7 +194,8 @@ HtmlSource:-->
 	Syntax:-->
 		parentnode  > childnode...
 
-		By.cssSelector("div[id='login_conainer'] >  input")
+		By.cssSelector("div[id='login_container'] >  input")
+		By.cssSelector("div[id='login_container'] > input[type='text']")
 		
 		Note:--> greaterthan symbol [>] identify child elements under
 				 parent node...
@@ -289,3 +290,9 @@ Css Position:-->
 	tagname:nth-child(int pos)
 	tagname:nth-of-type(int pos)
 	tagname:nth-last-child(int pos)
+	
+	
+	For more cssselectors follow below link
+	https://www.w3schools.com/cssref/css_selectors.php
+	
+	

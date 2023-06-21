@@ -25,7 +25,7 @@ Default inspect option at browser window:---->
 
 Locators in Webdriver:--->
 		By is a locator class at Webdriver,We have
-		list of indentification methods under By Class.
+		list of identification methods under By Class.
 	
 	id
 	name
@@ -45,8 +45,6 @@ id and name locators:--->
 	for every object to recognize easier.....Setting unique identification
 	to objects is developer responsibility.
 	
-	Note:--> Tester only pick identification from HTML source
-	
 	HtmlNode:--->
 		<input id="x" class="ABC" type="email" name="user">
 
@@ -61,6 +59,6 @@ id and name locators:--->
 		
 		Note:--> To identify location otherthan ID & name property
 				 We follow Xpath and CssSelector.These Selectors
-				 can identify object by customizing html sources.
+				 can identify object by customize html sources.
 				 
 	====================================================================
